@@ -1,0 +1,27 @@
+﻿@page
+@model who_is_not_follback.Pages.IndexModel
+@{
+    ViewData["Title"] = "Who is Not Following Back";
+}
+
+<h2>Who is Not Following Back</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Instagram Username</th>
+            <th>Date Follow</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (var i = 0; i < Model.NotFollowingBack.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td><a href="@Model.NotFollowingBack[i].ProfileLink" target="_blank">@Model.NotFollowingBack[i].Username</a></td>
+                <td>@Model.NotFollowingBack[i].Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
